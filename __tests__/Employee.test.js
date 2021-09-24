@@ -18,7 +18,19 @@ test('creates employee object', () => {
 test('gets name value', () => {
     const employee = new Employee(edMockData);
 
-    expect(employee.getName()).toEqual("yeet");
+    expect(employee.getName()).toEqual(employee.name);
+})
+
+test('gets id value', () => {
+    const employee = new Employee(edMockData);
+
+    expect(employee.getId()).toEqual(employee.id);
+})
+
+test('gets email value', () => {
+    const employee = new Employee(edMockData);
+
+    expect(employee.getEmail()).toEqual(employee.email);
 })
 
 test('gets role value', () => {
