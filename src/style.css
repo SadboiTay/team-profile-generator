@@ -1,0 +1,42 @@
+:root {
+    --color-primary: #6C584C;
+    --color-secondary: #A98467;
+    --color-tertiary: #ADC178;
+    --color-quarternary: #DDE5B6;
+    --color-quinary: #F0EAD2;
+}
+
+body {
+    background-color: var(--color-primary);
+}
+
+header {
+    background-color: var(--color-primary);
+    color: var(--color-quinary);
+}
+
+.card {
+    background-color: var(--color-primary);
+}
+
+.card-header {
+    background-color: var(--color-tertiary);
+}
+
+.manager {
+    background-color: var(--color-primary);
+}
+
+.engineer {
+    background-color: var(--color-secondary);
+}
+
+.intern {
+    background-color: var(--color-quarternary);
+}
+
+.card-text {
+    background-color: var(--color-quinary);
+    padding: 8px;
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
