@@ -40,3 +40,9 @@ test('gets school value', () => {
 
     expect(intern.getSchool()).toEqual(intern.school);
 })
+
+test('gets role value, overriden from employee', () => {
+    const intern = new Intern(ryanMockData);
+
+    expect(intern.getRole()).toEqual("Intern");
+})
