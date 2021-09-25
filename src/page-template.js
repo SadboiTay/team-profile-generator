@@ -1,3 +1,5 @@
+const Employee = require("../lib/Employee");
+
 const generateManagerCard = (teamData) => {
     const [manager] = teamData;
 
@@ -17,7 +19,23 @@ const generateManagerCard = (teamData) => {
 }
 
 const generateEngineerCard = (teamData) => {
-    
+    const engineers = teamData.filter(employee => employee.getRole() === 'Engineer');
+
+    return engineers.map((engineer) => {
+        return `
+        <div class="col-3 card mt-5 mx-3 shadow">
+            <div class="engineer card-header">
+                <h2>${engineer.getName()}</h2>
+                <h4><i class="fas fa-hammer"></i> Engineer</h4>
+            </div>
+            <div class="card-body">
+                <div class="card-text"><strong>ID: </strong>${engineer.getId()}</div>
+                <div class="card-text"><strong>Email: </strong>${engineer.getEmail()}</div>
+                <div class="card-text"><strong>GitHub: </strong>${engineer.getGithub()}</div>
+            </div>
+        </div>
+        `;
+    }).join('');
 }
 
 module.exports = (teamData) => {
@@ -46,39 +64,7 @@ module.exports = (teamData) => {
                 ${generateManagerCard(teamData)}
             </div>
             <div class="row justify-content-center">
-                <div class="col-3 card mt-5 mx-3 shadow">
-                    <div class="engineer card-header">
-                        <h2>Bill</h2>
-                        <h4><i class="fas fa-hammer"></i> Engineer</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text"><strong>ID: </strong>2</div>
-                        <div class="card-text"><strong>Email: </strong>edrules@yahoo.com</div>
-                        <div class="card-text"><strong>GitHub: </strong>github.com/billbaby</div>
-                    </div>
-                </div>
-                <div class="col-3 card mt-5 mx-3 shadow">
-                    <div class="engineer card-header">
-                        <h2>Bill</h2>
-                        <h4><i class="fas fa-hammer"></i> Engineer</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text"><strong>ID: </strong>2</div>
-                        <div class="card-text"><strong>Email: </strong>edrules@yahoo.com</div>
-                        <div class="card-text"><strong>GitHub: </strong>github.com/billbaby</div>
-                    </div>
-                </div>
-                <div class="col-3 card mt-5 mx-3 shadow">
-                    <div class="engineer card-header">
-                        <h2>Bill</h2>
-                        <h4><i class="fas fa-hammer"></i> Engineer</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text"><strong>ID: </strong>2</div>
-                        <div class="card-text"><strong>Email: </strong>edrules@yahoo.com</div>
-                        <div class="card-text"><strong>GitHub: </strong>github.com/billbaby</div>
-                    </div>
-                </div>
+                ${generateEngineerCard(teamData)}
             </div>
             <div class="row justify-content-center">
                 <div class="col-3 card mt-5 mx-3 shadow">
