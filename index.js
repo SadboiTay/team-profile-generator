@@ -307,6 +307,15 @@ const writeToFile = (data) => {
     })
 }
 
+const copyFile = () => {
+    fs.copyFile('./src/style.css', './dist/style.css', err => {
+        if (err) {
+            console.log(err);
+        }
+    })
+}
+
 // initialize();
 
 writeToFile(generateHTML(mockTeamData));
+copyFile();

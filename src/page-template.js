@@ -46,7 +46,7 @@ const generateInternCard = (teamData) => {
         <div class="col-3 card mt-5 mx-3 shadow">
             <div class="intern card-header">
                 <h2>${intern.getName()}</h2>
-                <h4><i class="fas fa-hammer"></i> Intern</h4>
+                <h4><i class="fas fa-graduation-cap"></i> Intern</h4>
             </div>
             <div class="card-body">
                 <div class="card-text"><strong>ID: </strong>${intern.getId()}</div>
