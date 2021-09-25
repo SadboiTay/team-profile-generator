@@ -36,7 +36,12 @@ const mockKaikee = {
 mockTeamData = [
     new Manager(mockChase),
     new Engineer(mockTaylor),
+    new Engineer(mockTaylor),
+    new Engineer(mockTaylor),
     new Engineer(mockDallin),
+    new Engineer(mockDallin),
+    new Engineer(mockDallin),
+    new Intern(mockKaikee),
     new Intern(mockKaikee)
 ]
 
@@ -118,10 +123,10 @@ const initialize = () => {
                 addEngineer(teamData);
                 break;
             case 'Intern':
-                console.log("Intern coming right up");
+                addIntern(teamData);
                 break;
             case "I'm done adding team members":
-                console.log("have a nice day");
+                endProcess(teamData);
         }
     })
 }
@@ -204,7 +209,7 @@ const addEngineer = (teamData) => {
                 addIntern(teamData);
                 break;
             case "I'm done adding team members":
-                console.log("have a nice day");
+                endProcess(teamData);
         }
     })
 }
@@ -287,8 +292,7 @@ const addIntern = (teamData) => {
                 addIntern(teamData);
                 break;
             case "I'm done adding team members":
-                console.log("have a nice day");
-                console.log(teamData);
+                endProcess(teamData);
         }
     })
 }
@@ -307,7 +311,7 @@ const writeToFile = (data) => {
     })
 }
 
-const copyFile = () => {
+const copyCssFile = () => {
     fs.copyFile('./src/style.css', './dist/style.css', err => {
         if (err) {
             console.log(err);
@@ -315,7 +319,13 @@ const copyFile = () => {
     })
 }
 
+const endProcess = teamData => {
+    const pageTemplate = generateHTML(teamData);
+
+    writeToFile(pageTemplate);
+    copyCssFile();
+}
+
 // initialize();
 
-writeToFile(generateHTML(mockTeamData));
-copyFile();
+endProcess(mockTeamData);
