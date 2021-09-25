@@ -7,11 +7,11 @@
   # Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Walkthrough Video](#walkthroughvideo)
+  * [Walkthrough Video](#walkthrough-video)
   * [License](#license)
   * [Contributing](#contributing)
   * [Tests](#tests)
-  * [Built With](#builtwith)
+  * [Built With](#built-with)
   * [Questions](#questions)
 
   # Installation
