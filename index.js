@@ -321,7 +321,6 @@ const copyCssFile = () => {
 
 const endProcess = teamData => {
     const pageTemplate = generateHTML(teamData);
-
     writeToFile(pageTemplate);
     copyCssFile();
 }

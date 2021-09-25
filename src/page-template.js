@@ -11,7 +11,7 @@ const generateManagerCard = (teamData) => {
         </div>
         <div class="manager card-body">
             <div class="card-text"><strong>ID: </strong>${manager.getId()}</div>
-            <div class="card-text"><strong>Email: </strong>${manager.getEmail()}</div>
+            <div class="card-text"><strong>Email: </strong><a href="mailto:someone@example.com">${manager.getEmail()}</a></div>
             <div class="card-text"><strong>Office Number: </strong>${manager.getOfficeNumber()}</div>
         </div>
     </div>
@@ -30,8 +30,8 @@ const generateEngineerCard = (teamData) => {
             </div>
             <div class="card-body">
                 <div class="card-text"><strong>ID: </strong>${engineer.getId()}</div>
-                <div class="card-text"><strong>Email: </strong>${engineer.getEmail()}</div>
-                <div class="card-text"><strong>GitHub: </strong>${engineer.getGithub()}</div>
+                <div class="card-text"><strong>Email: </strong><a href="mailto:someone@example.com">${engineer.getEmail()}</a></div>
+                <div class="card-text"><strong>GitHub: </strong><a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></div>
             </div>
         </div>
         `;
@@ -50,7 +50,7 @@ const generateInternCard = (teamData) => {
             </div>
             <div class="card-body">
                 <div class="card-text"><strong>ID: </strong>${intern.getId()}</div>
-                <div class="card-text"><strong>Email: </strong>${intern.getEmail()}</div>
+                <div class="card-text"><strong>Email: </strong><a href="mailto:someone@example.com">${intern.getEmail()}</a></div>
                 <div class="card-text"><strong>GitHub: </strong>${intern.getSchool()}</div>
             </div>
         </div>
