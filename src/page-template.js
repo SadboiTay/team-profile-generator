@@ -38,6 +38,26 @@ const generateEngineerCard = (teamData) => {
     }).join('');
 }
 
+const generateInternCard = (teamData) => {
+    const interns = teamData.filter(employee => employee.getRole() === 'Intern');
+
+    return interns.map((intern) => {
+        return `
+        <div class="col-3 card mt-5 mx-3 shadow">
+            <div class="intern card-header">
+                <h2>${intern.getName()}</h2>
+                <h4><i class="fas fa-hammer"></i> Intern</h4>
+            </div>
+            <div class="card-body">
+                <div class="card-text"><strong>ID: </strong>${intern.getId()}</div>
+                <div class="card-text"><strong>Email: </strong>${intern.getEmail()}</div>
+                <div class="card-text"><strong>GitHub: </strong>${intern.getSchool()}</div>
+            </div>
+        </div>
+        `;
+    }).join('');
+}
+
 module.exports = (teamData) => {
     return `
     <!DOCTYPE html>
@@ -67,28 +87,7 @@ module.exports = (teamData) => {
                 ${generateEngineerCard(teamData)}
             </div>
             <div class="row justify-content-center">
-                <div class="col-3 card mt-5 mx-3 shadow">
-                    <div class="intern card-header">
-                        <h2>Ryan</h2>
-                        <h4><i class="fas fa-graduation-cap"></i> Intern</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text"><strong>ID: </strong>2</div>
-                        <div class="card-text"><strong>Email: </strong>edrules@yahoo.com</div>
-                        <div class="card-text"><strong>School: </strong>UofU</div>
-                    </div>
-                </div>
-                <div class="col-3 card mt-5 mx-3 shadow">
-                    <div class="intern card-header">
-                        <h2>Ryan</h2>
-                        <h4><i class="fas fa-graduation-cap"></i> Intern</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-text"><strong>ID: </strong>2</div>
-                        <div class="card-text"><strong>Email: </strong>edrules@yahoo.com</div>
-                        <div class="card-text"><strong>School: </strong>UofU</div>
-                    </div>
-                </div>
+                ${generateInternCard(teamData)}
             </div>
         </div>
     
