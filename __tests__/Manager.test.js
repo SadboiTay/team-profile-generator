@@ -35,6 +35,12 @@ test('gets email value', () => {
     expect(manager.getEmail()).toEqual(manager.email);
 })
 
+test('gets office number value', () => {
+    const manager = new Manager(billMockData);
+
+    expect(manager.getOfficeNumber()).toEqual(manager.officeNumber);
+})
+
 test('gets role value, overriden from employee', () => {
     const manager = new Manager(billMockData);
 

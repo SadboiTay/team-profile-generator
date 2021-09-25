@@ -5,6 +5,41 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+const mockChase = {
+    name: 'Chase',
+    id: '1',
+    email: 'chase.com',
+    officeNumber: '13'
+}
+
+const mockTaylor = {
+    name: 'Taylor',
+    id: '2',
+    email: 'Taylor.com',
+    github: 'SadboiTay'
+}
+
+const mockDallin = {
+    name: 'Dallin',
+    id: '3',
+    email: 'Dallin.com',
+    github: 'dallindawg2'
+}
+
+const mockKaikee = {
+    name: 'Kaikee',
+    id: '4',
+    email: 'Kaikee.com',
+    school: 'HomePoint Financial'
+}
+
+mockTeamData = [
+    new Manager(mockChase),
+    new Engineer(mockTaylor),
+    new Engineer(mockDallin),
+    new Intern(mockKaikee)
+]
+
 const initialize = () => {
     const teamData = [];
 
@@ -258,4 +293,20 @@ const addIntern = (teamData) => {
     })
 }
 
-initialize();
+const writeToFile = (data) => {
+    fs.writeFile('./dist/index.html', data, err => {
+        if (err) {
+            console.log(err);
+        }
+
+        console.log(`
+            -------------------------------
+            Team Profile Webpage Generated!
+            -------------------------------
+        `);
+    })
+}
+
+// initialize();
+
+writeToFile(generateHTML(mockTeamData));
