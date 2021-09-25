@@ -1,5 +1,3 @@
-const Employee = require("../lib/Employee");
-
 const generateManagerCard = (teamData) => {
     const [manager] = teamData;
 
@@ -51,7 +49,7 @@ const generateInternCard = (teamData) => {
             <div class="card-body">
                 <div class="card-text"><strong>ID: </strong>${intern.getId()}</div>
                 <div class="card-text"><strong>Email: </strong><a href="mailto:someone@example.com">${intern.getEmail()}</a></div>
-                <div class="card-text"><strong>GitHub: </strong>${intern.getSchool()}</div>
+                <div class="card-text"><strong>School: </strong>${intern.getSchool()}</div>
             </div>
         </div>
         `;

@@ -7,41 +7,46 @@ const Intern = require('./lib/Intern');
 
 const mockChase = {
     name: 'Chase',
-    id: '1',
-    email: 'chase.com',
-    officeNumber: '13'
+    id: '3',
+    email: 'chasesensei@gmail.com',
+    officeNumber: '134',
+    github: 'Skrillybrick'
 }
 
 const mockTaylor = {
     name: 'Taylor',
     id: '2',
-    email: 'Taylor.com',
+    email: 'tg.hakes@gmail.com',
     github: 'SadboiTay'
+}
+
+const mockElon = {
+    name: 'Elon Musk',
+    id: '1',
+    email: 'teslaman@gmail.com',
+    github: 'iheartmars',
+    officeNumber: 69
 }
 
 const mockDallin = {
     name: 'Dallin',
-    id: '3',
-    email: 'Dallin.com',
-    github: 'dallindawg2'
+    id: '4',
+    email: 'conservativedallin@gmail.com',
+    github: 'Ddemie'
 }
 
 const mockKaikee = {
     name: 'Kaikee',
-    id: '4',
-    email: 'Kaikee.com',
-    school: 'HomePoint Financial'
+    id: '5',
+    email: 'khakes@gmail.com',
+    school: 'UofU'
 }
 
 mockTeamData = [
-    new Manager(mockChase),
-    new Engineer(mockTaylor),
-    new Engineer(mockTaylor),
+    new Manager(mockElon),
+    new Engineer(mockChase),
     new Engineer(mockTaylor),
     new Engineer(mockDallin),
-    new Engineer(mockDallin),
-    new Engineer(mockDallin),
-    new Intern(mockKaikee),
     new Intern(mockKaikee)
 ]
 
@@ -307,6 +312,7 @@ const writeToFile = (data) => {
             -------------------------------
             Team Profile Webpage Generated!
             -------------------------------
+               open --> /dist/index.html
         `);
     })
 }
@@ -325,6 +331,6 @@ const endProcess = teamData => {
     copyCssFile();
 }
 
-// initialize();
+// endProcess(mockTeamData);
 
-endProcess(mockTeamData);
+initialize();
